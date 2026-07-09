@@ -2,7 +2,8 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 
 // GitHub Pages project site. If you move to a custom domain at the root
-// (for example docs.chrysalis.ai), set base to "/" and update site.
+// (for example docs.chrysalis.ai), set base to "/" and update site,
+// and change the /mothy-docs/ links in the content to /.
 export default defineConfig({
   site: "https://impendingtech.github.io",
   base: "/mothy-docs",
@@ -10,7 +11,7 @@ export default defineConfig({
     starlight({
       title: "Mothy Documentation",
       description:
-        "The official documentation for Mothy, a sovereign, self-hosted AI assistant.",
+        "How to use Mothy, the private AI assistant on your organisation's Chrysalis appliance.",
       customCss: ["./src/styles/brand.css"],
       social: [
         {
@@ -19,14 +20,18 @@ export default defineConfig({
           href: "https://github.com/ImpendingTech/mothy",
         },
       ],
-      // Drop the real moth logo into src/assets/ and uncomment:
-      // logo: { src: "./src/assets/logo.svg", alt: "Mothy" },
+      logo: {
+        light: "./src/assets/mothy-wordmark.svg",
+        dark: "./src/assets/mothy-wordmark-reversed.svg",
+        replacesTitle: true,
+      },
+      favicon: "/favicon.svg",
       sidebar: [
         {
           label: "Start here",
           items: [
             { label: "Getting started", slug: "getting-started" },
-            { label: "Core concepts", slug: "concepts" },
+            { label: "How Mothy works", slug: "concepts" },
           ],
         },
         {
@@ -35,29 +40,23 @@ export default defineConfig({
             { label: "Documents and answers", slug: "documents-and-answers" },
             { label: "Memory", slug: "memory" },
             { label: "Skills", slug: "skills" },
-            { label: "Proposals and approvals", slug: "proposals-and-approvals" },
             { label: "Automations", slug: "automations" },
             { label: "Delegation", slug: "delegation" },
             { label: "Connectors and actions", slug: "connectors-and-actions" },
           ],
         },
         {
-          label: "Running Mothy",
+          label: "Administration",
           items: [
-            { label: "Users and isolation", slug: "users-and-isolation" },
+            { label: "Proposals and approvals", slug: "proposals-and-approvals" },
+            { label: "Users and access", slug: "users-and-isolation" },
             { label: "Audit and compliance", slug: "audit-and-compliance" },
-            { label: "Security and hardening", slug: "security-and-hardening" },
-            { label: "Deployment", slug: "deployment" },
+            { label: "Security and privacy", slug: "security-and-hardening" },
           ],
         },
         {
-          label: "Reference",
-          items: [
-            { label: "Configuration", slug: "configuration" },
-            { label: "Commands", slug: "commands" },
-            { label: "Data model", slug: "data-model" },
-            { label: "Limitations", slug: "limitations" },
-          ],
+          label: "Good to know",
+          items: [{ label: "Good to know", slug: "limitations" }],
         },
       ],
     }),

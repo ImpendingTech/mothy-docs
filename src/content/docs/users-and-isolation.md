@@ -1,42 +1,25 @@
 ---
-title: "Users and Isolation"
-description: "Accounts, single-password and multi-user modes, the ownership rule, and database-enforced isolation with Row-Level Security under the mothy_app role. For operators and developers."
+title: "Users and access"
+description: "Accounts, and how each person's private information is kept separate."
 ---
 
-Mothy can run as a single trust domain or as separate accounts, and in both it
-keeps each user's private data separate at the database level.
+Mothy can run as a single shared login or as individual accounts. This page is for
+administrators.
 
-## Modes
+## Accounts
 
-- Single-password mode suits one trust domain: set `AUTH_PASSWORD` and
-  `AUTH_SECRET`.
-- Multi-user mode gives per-user accounts: set `MULTI_USER` and add users with
-  `npm run user:add` (list them with `npm run user:list`). Accounts use scrypt
-  password hashing.
+Your administrator adds an account for each person who should use Mothy. Accounts
+are protected by strong password handling, and sign-in attempts are recorded.
 
-## The ownership rule
+## Private and shared information
 
-Every row of user data (documents, chunks, memories, tasks, and the agentic
-tables) carries an `owner_user_id`. One rule, `resolveOwnerUserId`, sets it on
-every write path. A row with an owner is private to that user; a row with no owner
-is shared by intent, readable by everyone. Ingest states ownership explicitly with
-`--owner <user>` or `--shared`.
-
-## Database-enforced isolation
-
-Isolation does not rely on the application remembering to filter. Postgres
-Row-Level Security enforces it. Each signed-in user's requests run under a
-dedicated non-superuser role, `mothy_app`, inside a transaction that sets the user
-context, so a missed application filter cannot leak data across users. A startup
-probe refuses to serve if that enforced role is not reachable, and the database
-superuser is used only for the administrative command-line tools.
-
-This is proven, not asserted: `npm run test:isolation` shows each user sees only
-their own data plus the shared corpus, across every data type, including skills
-and proposals.
+Every document, note, and memory has an owner. Information owned by a person is
+private to them; information with no owner is shared across your organisation. The
+separation is enforced by the system at the database level, not just in the
+interface, so a person can only ever see their own private information plus the
+shared material. This is verified, not merely intended.
 
 ## Related
 
-- [Core concepts](/mothy-docs/concepts/)
+- [How Mothy works](/mothy-docs/concepts/)
 - [Audit and compliance](/mothy-docs/audit-and-compliance/)
-- [Commands](/mothy-docs/commands/)

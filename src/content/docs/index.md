@@ -1,26 +1,26 @@
 ---
 title: Mothy Documentation
-description: "The official documentation for Mothy: getting started, how each capability works, and the operator and developer reference."
+description: "How to use Mothy, the private AI assistant on your organisation's Chrysalis appliance."
 template: splash
 hero:
-  tagline: A sovereign, self-hosted AI assistant. It reads your documents, answers grounded in them, takes auditable actions, and runs entirely on your own hardware. No data leaves the machine.
+  tagline: Mothy is the assistant on your organisation's Chrysalis appliance. A private AI that reads your documents, answers from them, and takes auditable actions, all on hardware that is yours alone. Nothing leaves the box.
   actions:
     - text: Get started
       link: /mothy-docs/getting-started/
       icon: right-arrow
       variant: primary
-    - text: View on GitHub
-      link: https://github.com/ImpendingTech/mothy
+    - text: About Chrysalis and Mothy
+      link: https://impendingtech.sharepoint.com/sites/chrysalis-kb
       icon: external
       variant: minimal
 ---
 
 ## Explore the docs
 
-Start here: [Getting started](/mothy-docs/getting-started/) and [Core concepts](/mothy-docs/concepts/).
+Start here: [Getting started](/mothy-docs/getting-started/) and [How Mothy works](/mothy-docs/concepts/).
 
-Using Mothy: [Documents and answers](/mothy-docs/documents-and-answers/), [Memory](/mothy-docs/memory/), [Skills](/mothy-docs/skills/), [Proposals and approvals](/mothy-docs/proposals-and-approvals/), [Automations](/mothy-docs/automations/), [Delegation](/mothy-docs/delegation/), and [Connectors and actions](/mothy-docs/connectors-and-actions/).
+Using Mothy: [Documents and answers](/mothy-docs/documents-and-answers/), [Memory](/mothy-docs/memory/), [Skills](/mothy-docs/skills/), [Automations](/mothy-docs/automations/), [Delegation](/mothy-docs/delegation/), and [Connectors and actions](/mothy-docs/connectors-and-actions/).
 
-Running Mothy: [Users and isolation](/mothy-docs/users-and-isolation/), [Audit and compliance](/mothy-docs/audit-and-compliance/), [Security and hardening](/mothy-docs/security-and-hardening/), and [Deployment](/mothy-docs/deployment/).
+For administrators: [Proposals and approvals](/mothy-docs/proposals-and-approvals/), [Users and access](/mothy-docs/users-and-isolation/), [Audit and compliance](/mothy-docs/audit-and-compliance/), and [Security and privacy](/mothy-docs/security-and-hardening/).
 
-Reference: [Configuration](/mothy-docs/configuration/), [Commands](/mothy-docs/commands/), [Data model](/mothy-docs/data-model/), and [Limitations](/mothy-docs/limitations/).
+[Good to know](/mothy-docs/limitations/): what Mothy does and does not do.

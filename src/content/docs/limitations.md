@@ -1,25 +1,23 @@
 ---
-title: "Limitations"
-description: "Mothy's known limitations, stated plainly: PDF table reconstruction, calendar sources, the database hardening step, the sources block, and which paths are covered by manual checks rather than CI."
+title: "Good to know"
+description: "A few honest limits, so nothing surprises you."
 ---
 
-Stated plainly, so nobody is surprised.
+A few honest limits, so nothing surprises you.
 
-- PDF table reconstruction is best-effort. A document with important tables, such
-  as a fee schedule, is better ingested as `.docx` or `.md`.
-- Calendar reads come from the macOS EventKit helper on a development box or the
-  Microsoft 365 connector on the appliance. The connector's live paths need a real
-  tenant.
-- The ask API does not yet return grounding sources to the web UI. The sources
-  block is wired and waiting.
-- `drizzle-kit push` drops Row-Level Security and the audit trigger; always follow
-  `npm run db:push` with `npm run db:harden`.
-- The database, live-model, connector, and appliance-build paths are covered by
-  documented manual checks rather than continuous integration, because they need
-  Postgres, a running model, a tenant, or the appliance toolchain.
-- The `gdpr/` evidence pack is drafts pending legal review.
+- Mothy answers from the documents it has been given. If something is not in them,
+  it says so rather than guess. Ask your administrator to add any material that is
+  missing.
+- Tables inside PDFs are read on a best-effort basis. A Word or markdown version of
+  a document with important tables reads more reliably.
+- Calendar and email features work only if your organisation has enabled the
+  Microsoft 365 connector.
+- Mothy takes no outbound action on its own. Sending an email or creating an event
+  always waits for you to confirm.
+- Hosting, updates, and backups are handled by Impending Tech. There is nothing for
+  you to install or maintain.
 
 ## Related
 
-- [Feature Inventory](https://github.com/ImpendingTech/mothy)
-- [Documentation home](/mothy-docs/)
+- [Getting started](/mothy-docs/getting-started/)
+- [Security and privacy](/mothy-docs/security-and-hardening/)

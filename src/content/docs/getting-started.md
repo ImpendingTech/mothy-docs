@@ -1,69 +1,33 @@
 ---
-title: "Getting Started"
-description: "Prerequisites, install, configuration, database setup, ingesting your first documents, and asking your first question. For operators and developers setting up a Mothy dev box."
+title: "Getting started"
+description: "How to sign in to Mothy on your Chrysalis appliance and ask your first question. There is nothing to install."
 ---
 
-This page gets a Mothy development box running and answers your first question.
-For the pinned appliance build and hosted deployment, see
-[Deployment](/mothy-docs/deployment/).
+Mothy runs on your organisation's Chrysalis appliance, a dedicated, private box
+that Impending Tech hosts and maintains for you. There is nothing to install and
+nothing to run yourself. You use Mothy through your web browser.
 
-## Prerequisites
+## Sign in
 
-- Node 20 or newer. The code is TypeScript run with `tsx`.
-- Docker, for Postgres with the pgvector extension. The repo ships a
-  `docker-compose.yml` for the local database.
-- Ollama, for local embeddings and chat. Pull an embedding model and a chat
-  model before first run.
-
-Everything runs on your machine. The only network traffic is localhost to your
-own Ollama and Postgres.
-
-## Install (development)
-
-Clone the repository (github.com/ImpendingTech/mothy) and run the installer for
-your platform: `install.sh` on macOS or `install-linux.sh` on Linux. These
-install live and unpinned and are for development, not the appliance. On macOS,
-`Mothy.app` is a double-click wrapper and `update.sh` is the git-based refresh.
-
-## Configure
-
-Configuration comes only from the environment, validated in one place, and
-invalid config fails fast. At minimum set the database URL, the Ollama URL and
-models, and authentication. See the full list in
-[Configuration](/mothy-docs/configuration/).
-
-Authentication is required before Mothy will bind to anything other than
-loopback. For a single trust domain set `AUTH_PASSWORD` and `AUTH_SECRET`. For
-separate accounts set `MULTI_USER` and add users with `npm run user:add` (see
-[Users and isolation](/mothy-docs/users-and-isolation/)).
-
-## Set up the database
-
-Bring up Postgres with the shipped `docker-compose.yml`, then:
-
-- `npm run db:push` creates the schema.
-- `npm run db:harden` re-applies Row-Level Security and the audit trigger.
-  Always run this after `db:push`, which drops them.
-- `npm run db:index` builds the vector and full-text indexes.
-
-## Ingest documents
-
-Put files (PDF, Word, `.txt`, `.md`) in `./data` and run `npm run ingest`. State
-ownership explicitly: `npm run ingest -- --owner <user>` for a private corpus, or
-`npm run ingest -- --shared` for the common corpus everyone can read. See
-[Documents and answers](/mothy-docs/documents-and-answers/).
+Open the web address for your organisation's Chrysalis appliance (your
+administrator provides it) and sign in with the account you were given. If you do
+not have an account yet, ask your administrator to add you (see
+[Users and access](/mothy-docs/users-and-isolation/)).
 
 ## Ask your first question
 
-Start the server with `npm run web` and open the chat at `localhost:3000`. Log in,
-then ask a question about your documents. Mothy retrieves the relevant passages
-and answers from them, saying plainly when something is not in the documents.
+Type a question about your organisation's documents into the chat and send it.
+Mothy finds the relevant passages and answers from them. It quotes figures
+exactly, and it tells you plainly when the answer is not in the documents rather
+than guessing. See [Documents and answers](/mothy-docs/documents-and-answers/).
 
-You can also ask from the command line: `npm run agent -- "your question"`.
+## What you can do next
 
-## Next steps
+- Teach Mothy your recurring procedures with [Skills](/mothy-docs/skills/).
+- Have it run routine jobs on a schedule with [Automations](/mothy-docs/automations/).
+- Let it read your calendar and email, and draft messages you confirm, with
+  [Connectors and actions](/mothy-docs/connectors-and-actions/).
 
-- Learn the ideas the rest of the docs build on in [Core concepts](/mothy-docs/concepts/).
-- Give Mothy reusable procedures with [Skills](/mothy-docs/skills/).
-- Schedule recurring work with [Automations](/mothy-docs/automations/).
-- Understand the trail everything leaves in [Audit and compliance](/mothy-docs/audit-and-compliance/).
+Everything Mothy does is recorded in a tamper-evident trail, and anything that
+changes how it behaves needs a person to approve it first. See
+[How Mothy works](/mothy-docs/concepts/).

@@ -1,63 +1,53 @@
 ---
-title: "Core Concepts"
-description: "The ideas the rest of the Mothy docs build on: grounded answers, the agent loop and tools, the tamper-evident audit chain, ownership and isolation, the propose-then-approve rule, and the privacy boundary."
+title: "How Mothy works"
+description: "The ideas behind Mothy: grounded answers, the assistant and its tools, the tamper-evident audit trail, data separation, the approve-before-it-is-real rule, and the privacy boundary."
 ---
 
-Six ideas run through the whole product. Understanding them makes the rest of the
-documentation straightforward.
+A few ideas run through everything Mothy does. Understanding them makes the rest
+of the documentation straightforward.
 
 ## Grounded answers
 
-Mothy answers from your documents, not from the model's memory. It retrieves the
-passages most relevant to a question and is instructed to answer only from them,
-to quote figures exactly, to give both the components and the total for a
-structured answer, and to say plainly when something is not in the documents. It
-does not invent figures. See
-[Documents and answers](/mothy-docs/documents-and-answers/).
+Mothy answers from your organisation's documents, not from a general model's
+memory. It finds the passages most relevant to your question and answers only
+from them. It quotes figures exactly and says plainly when something is not in the
+documents. It does not invent figures.
 
-## The agent loop and tools
+## The assistant and its tools
 
-Mothy runs a tool-calling loop: it retrieves context, calls the local model with
-a set of tools, feeds the results back, and repeats until it can answer. Tools
-are added beside each other, never by rearchitecting the loop. The current tools
-are `search_documents`, `save_note`, `create_task`, the read-only
-`get_calendar_today`, and the agentic tools `skills_list`, `skill_view`,
-`skill_propose`, `automation_propose`, and `delegate_task`. The model decides
-which to call; it never holds authority to change anything on its own.
+Mothy is more than a chat box. It can search your documents, save notes, create
+tasks, check your calendar, follow approved procedures
+([skills](/mothy-docs/skills/)), run scheduled jobs
+([automations](/mothy-docs/automations/)), and split a large task across helpers
+([delegation](/mothy-docs/delegation/)). It chooses which of these to use for a
+request, but it never has the authority to change anything on its own.
 
-## The audit chain
+## The audit trail
 
-Every action Mothy takes is written to an append-only, hash-chained audit log.
-Each row hashes the previous row plus its own contents, so any edit, deletion, or
-reordering breaks the chain and is detectable. A database trigger blocks updates
-and deletes, and those rights are revoked from the application role. This is the
-foundation of the compliance story: not just what the assistant did, but a record
-that cannot be quietly altered. See
+Everything Mothy does is written to a tamper-evident record. Each entry is chained
+to the one before it, so nothing can be quietly altered, deleted, or reordered
+without it showing. This is what lets your organisation prove, later, exactly what
+the assistant did and who approved the behaviour it followed. See
 [Audit and compliance](/mothy-docs/audit-and-compliance/).
 
-## Ownership and isolation
+## Your data stays separate
 
-Every piece of user data carries an owner. One rule sets `owner_user_id` on every
-write path; a row with no owner is shared by intent. Separation is enforced by
-the database, not just the application: Postgres Row-Level Security runs each
-signed-in user's requests under a dedicated non-superuser role, so a missed
-application filter cannot leak data across users. See
-[Users and isolation](/mothy-docs/users-and-isolation/).
+Every piece of information in Mothy has an owner. Your private documents and notes
+are yours; shared material is available to everyone in your organisation. The
+separation is enforced by the system itself, so one person cannot see another
+person's private data. See [Users and access](/mothy-docs/users-and-isolation/).
 
-## Propose, then approve
+## Approve before it is real
 
-Anything self-modifying follows one rule: the model can propose, only a human
-commit makes it real. When Mothy drafts a new skill or a new automation, it does
-not write it. It stages a proposal that a person reviews as a diff, with the
-findings of a deterministic content scan, and approves or rejects. Approval,
-rejection, and the applied change are all on the audit chain. See
+Anything that would change how Mothy behaves follows one rule: Mothy can propose,
+but only a person makes it real. When Mothy drafts a new skill or automation, it
+does not apply it. It stages a proposal that an administrator reviews and approves
+or rejects, and that decision is recorded. See
 [Proposals and approvals](/mothy-docs/proposals-and-approvals/).
 
-## The privacy boundary
+## Nothing leaves the box
 
-Nothing leaves the box. All inference is local through Ollama, and the only
-network traffic in the core product is localhost to your own Ollama and Postgres.
-Any external capability, such as the Microsoft 365 connector, ships disabled and
-is enabled per customer by explicit configuration; turning such a flag on is
-itself an audited event. A continuous-integration guard fails the build if any
-module outside the allowlisted local clients acquires an outbound network call.
+Mothy runs entirely on your dedicated Chrysalis appliance. It does not send your
+data anywhere. The only exception is a connector to your own Microsoft 365 tenant,
+which is off unless your organisation turns it on, and even then it reaches only
+your own tenant. See [Security and privacy](/mothy-docs/security-and-hardening/).

@@ -1,50 +1,32 @@
 ---
-title: "Security and Hardening"
-description: "Mothy's security posture: fail-closed bind, authentication, CSRF, security headers, TLS, validated config, generic errors, and the egress guard that keeps data on the box."
+title: "Security and privacy"
+description: "Why Mothy is private by design and secure by default, and what Impending Tech manages for you."
 ---
 
-Mothy is secure by default: a shipped configuration requires authentication and
-does not open itself to the network by accident.
+Mothy is private by design and secure by default. This page is for administrators
+and anyone assessing Mothy for their organisation.
 
-## Bind and authentication
+## Nothing leaves the box
 
-- Fail-closed bind: Mothy refuses to start on a non-loopback address unless
-  authentication is configured (`WEB_HOST`).
-- Authentication supports single-password and multi-user modes, with scrypt
-  password hashing and HMAC-signed HttpOnly session cookies. Login is rate
-  limited, and login failures, logouts, and lockouts are audited with the source
-  address on failures. Passwords are never logged.
+Mothy runs entirely on your dedicated Chrysalis appliance. It makes no outbound
+connections in normal use. The single exception is the optional Microsoft 365
+connector, which is off until your organisation turns it on and, when on, reaches
+only your own tenant. Turning it on is itself a recorded decision.
 
-## Request protections
+## Access and protection
 
-- CSRF protection on every state-changing endpoint, bound to the session.
-- The full set of security headers: Content-Security-Policy,
-  X-Content-Type-Options, X-Frame-Options, and Referrer-Policy.
-- TLS posture: a Secure cookie and HSTS behind a TLS-terminating reverse proxy
-  (`COOKIE_SECURE`).
-- Static assets are served through a fixed, unit-tested allowlist, so no client
-  input reaches a file path.
+Access requires signing in. Passwords are stored using strong, modern hashing,
+sessions are protected, and repeated failed sign-ins are rate limited and
+recorded. Traffic to the appliance is encrypted. Sensitive stored items, such as a
+connected mail account's tokens, are encrypted at rest.
 
-## Sound engineering defaults
+## Managed for you
 
-- Parameterised SQL everywhere.
-- Secrets come only from the environment, never from source or defaults.
-- Generic client errors, with the detail logged on the server under a per-request
-  id.
-- One central, validated configuration: every environment variable is read and
-  checked in one place, and invalid configuration fails fast.
-
-## The egress boundary
-
-The core product makes no outbound network calls. A continuous-integration guard
-fails the build if any module outside the allowlisted local Ollama and the
-Microsoft 365 client acquires an outbound network call. The Microsoft 365
-connector is the single, opt-in, audited exception, and it reaches only the
-customer's own tenant. See
-[Connectors and actions](/mothy-docs/connectors-and-actions/).
+Impending Tech hosts and maintains the appliance: updates, backups with tested
+restores, monitoring, and the security of the underlying box. Your organisation
+gets the benefits of a private system without having to run the infrastructure.
 
 ## Related
 
 - [Audit and compliance](/mothy-docs/audit-and-compliance/)
-- [Configuration](/mothy-docs/configuration/)
-- [Deployment](/mothy-docs/deployment/)
+- [How Mothy works](/mothy-docs/concepts/)

@@ -1,20 +1,17 @@
 ---
 title: "Memory"
-description: "How Mothy remembers durable facts across sessions: what memory is, how it is scoped per owner, and how it differs from skills and documents."
+description: "How Mothy remembers durable facts across conversations, scoped privately to you."
 ---
 
-Memory is Mothy's store of durable facts that should persist across
-conversations, such as a stable preference or a standing detail about how someone
-works. Facts are embedded and recalled by relevance across sessions.
+Mothy can remember durable facts across conversations, such as a standing
+preference or a detail about how you work, so you do not have to repeat yourself.
 
-Memory is owner-scoped like every other data type: a memory belongs to the user
-who created it, or is shared when it has no owner, and Row-Level Security keeps
-one user's memories out of another user's recall. See
-[Users and isolation](/mothy-docs/users-and-isolation/).
+A memory belongs to the person who created it and is private to them, unless it is
+deliberately shared. One person's memories are never visible to another.
 
-Memory writes are ordinary, visible tool calls inside a turn, and they are
-audited. Memory is not a background profiler: Mothy does not build conclusions
-about a user on a cadence in the background. If you want a reusable procedure
-rather than a fact, use a [skill](/mothy-docs/skills/);
-if you want Mothy to answer from source material, ingest it as a
+Memory is something Mothy does in front of you, as a visible step in the
+conversation, and it is recorded. Mothy does not build a hidden profile of you in
+the background. If you want Mothy to follow a reusable procedure rather than
+remember a fact, use a [skill](/mothy-docs/skills/); if you want it to answer from
+source material, ask your administrator to add that material as a
 [document](/mothy-docs/documents-and-answers/).
