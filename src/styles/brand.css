@@ -1,0 +1,22 @@
+/* Chrysalis brand accents for the Mothy docs site.
+   Deep green #1F342A, accent green #2E5242, cream #EED1A8, orange #C96B18.
+   Starlight is themed through its --sl-color-* custom properties. */
+
+/* Dark theme (Starlight default) */
+:root {
+  --sl-color-accent-low: #2b1e0c;
+  --sl-color-accent: #d98a3d;
+  --sl-color-accent-high: #f3e2c9;
+}
+
+/* Light theme */
+:root[data-theme="light"] {
+  --sl-color-accent-low: #f2e6d2;
+  --sl-color-accent: #b85f14;
+  --sl-color-accent-high: #16241c;
+}
+
+/* A touch of brand green on the hero title gradient and section headings. */
+.hero h1 {
+  color: var(--sl-color-white);
+}
