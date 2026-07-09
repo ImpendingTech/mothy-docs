@@ -53,5 +53,5 @@ shared. Ownership is set on every write path and enforced by Row-Level Security.
 
 ## Related
 
-- [Audit and compliance](./audit-and-compliance.md)
-- [Users and isolation](./users-and-isolation.md)
+- [Audit and compliance](/mothy-docs/audit-and-compliance/)
+- [Users and isolation](/mothy-docs/users-and-isolation/)

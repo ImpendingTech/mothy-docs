@@ -41,10 +41,10 @@ fails the build if any module outside the allowlisted local Ollama and the
 Microsoft 365 client acquires an outbound network call. The Microsoft 365
 connector is the single, opt-in, audited exception, and it reaches only the
 customer's own tenant. See
-[Connectors and actions](./connectors-and-actions.md).
+[Connectors and actions](/mothy-docs/connectors-and-actions/).
 
 ## Related
 
-- [Audit and compliance](./audit-and-compliance.md)
-- [Configuration](./configuration.md)
-- [Deployment](./deployment.md)
+- [Audit and compliance](/mothy-docs/audit-and-compliance/)
+- [Configuration](/mothy-docs/configuration/)
+- [Deployment](/mothy-docs/deployment/)

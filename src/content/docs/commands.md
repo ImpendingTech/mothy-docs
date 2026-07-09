@@ -67,5 +67,5 @@ plainly for the operator; library and server code use the structured logger.
 
 ## Related
 
-- [Configuration](./configuration.md)
-- [Getting started](./getting-started.md)
+- [Configuration](/mothy-docs/configuration/)
+- [Getting started](/mothy-docs/getting-started/)

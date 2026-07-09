@@ -11,7 +11,7 @@ and a pinned appliance build for the shipped product.
 `install.sh` on macOS and `install-linux.sh` on Linux install live and unpinned.
 They are for development, not the appliance. `update.sh` is the git-based refresh,
 and on macOS `Mothy.app` is a double-click wrapper. See
-[Getting started](./getting-started.md).
+[Getting started](/mothy-docs/getting-started/).
 
 ## The appliance build
 
@@ -45,6 +45,6 @@ reachable.
 
 ## Related
 
-- [Security and hardening](./security-and-hardening.md)
-- [Configuration](./configuration.md)
-- [Audit and compliance](./audit-and-compliance.md)
+- [Security and hardening](/mothy-docs/security-and-hardening/)
+- [Configuration](/mothy-docs/configuration/)
+- [Audit and compliance](/mothy-docs/audit-and-compliance/)

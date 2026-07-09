@@ -43,10 +43,10 @@ From the command line, staged actions are managed with `npm run action:list --
 The connector is the one door through which Mothy reaches outside the box, it
 ships closed, and turning it on is an explicit, audited configuration choice.
 Enabling it calls only the customer's own Microsoft 365 tenant. See
-[Security and hardening](./security-and-hardening.md).
+[Security and hardening](/mothy-docs/security-and-hardening/).
 
 ## Related
 
-- [Configuration](./configuration.md)
-- [Commands](./commands.md)
-- [Audit and compliance](./audit-and-compliance.md)
+- [Configuration](/mothy-docs/configuration/)
+- [Commands](/mothy-docs/commands/)
+- [Audit and compliance](/mothy-docs/audit-and-compliance/)

@@ -13,7 +13,7 @@ passages most relevant to a question and is instructed to answer only from them,
 to quote figures exactly, to give both the components and the total for a
 structured answer, and to say plainly when something is not in the documents. It
 does not invent figures. See
-[Documents and answers](./documents-and-answers.md).
+[Documents and answers](/mothy-docs/documents-and-answers/).
 
 ## The agent loop and tools
 
@@ -33,7 +33,7 @@ reordering breaks the chain and is detectable. A database trigger blocks updates
 and deletes, and those rights are revoked from the application role. This is the
 foundation of the compliance story: not just what the assistant did, but a record
 that cannot be quietly altered. See
-[Audit and compliance](./audit-and-compliance.md).
+[Audit and compliance](/mothy-docs/audit-and-compliance/).
 
 ## Ownership and isolation
 
@@ -42,7 +42,7 @@ write path; a row with no owner is shared by intent. Separation is enforced by
 the database, not just the application: Postgres Row-Level Security runs each
 signed-in user's requests under a dedicated non-superuser role, so a missed
 application filter cannot leak data across users. See
-[Users and isolation](./users-and-isolation.md).
+[Users and isolation](/mothy-docs/users-and-isolation/).
 
 ## Propose, then approve
 
@@ -51,7 +51,7 @@ commit makes it real. When Mothy drafts a new skill or a new automation, it does
 not write it. It stages a proposal that a person reviews as a diff, with the
 findings of a deterministic content scan, and approves or rejects. Approval,
 rejection, and the applied change are all on the audit chain. See
-[Proposals and approvals](./proposals-and-approvals.md).
+[Proposals and approvals](/mothy-docs/proposals-and-approvals/).
 
 ## The privacy boundary
 

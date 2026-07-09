@@ -6,7 +6,7 @@ hero:
   tagline: A sovereign, self-hosted AI assistant. It reads your documents, answers grounded in them, takes auditable actions, and runs entirely on your own hardware. No data leaves the machine.
   actions:
     - text: Get started
-      link: ./getting-started/
+      link: /mothy-docs/getting-started/
       icon: right-arrow
       variant: primary
     - text: View on GitHub
@@ -17,10 +17,10 @@ hero:
 
 ## Explore the docs
 
-Start here: [Getting started](./getting-started.md) and [Core concepts](./concepts.md).
+Start here: [Getting started](/mothy-docs/getting-started/) and [Core concepts](/mothy-docs/concepts/).
 
-Using Mothy: [Documents and answers](./documents-and-answers.md), [Memory](./memory.md), [Skills](./skills.md), [Proposals and approvals](./proposals-and-approvals.md), [Automations](./automations.md), [Delegation](./delegation.md), and [Connectors and actions](./connectors-and-actions.md).
+Using Mothy: [Documents and answers](/mothy-docs/documents-and-answers/), [Memory](/mothy-docs/memory/), [Skills](/mothy-docs/skills/), [Proposals and approvals](/mothy-docs/proposals-and-approvals/), [Automations](/mothy-docs/automations/), [Delegation](/mothy-docs/delegation/), and [Connectors and actions](/mothy-docs/connectors-and-actions/).
 
-Running Mothy: [Users and isolation](./users-and-isolation.md), [Audit and compliance](./audit-and-compliance.md), [Security and hardening](./security-and-hardening.md), and [Deployment](./deployment.md).
+Running Mothy: [Users and isolation](/mothy-docs/users-and-isolation/), [Audit and compliance](/mothy-docs/audit-and-compliance/), [Security and hardening](/mothy-docs/security-and-hardening/), and [Deployment](/mothy-docs/deployment/).
 
-Reference: [Configuration](./configuration.md), [Commands](./commands.md), [Data model](./data-model.md), and [Limitations](./limitations.md).
+Reference: [Configuration](/mothy-docs/configuration/), [Commands](/mothy-docs/commands/), [Data model](/mothy-docs/data-model/), and [Limitations](/mothy-docs/limitations/).

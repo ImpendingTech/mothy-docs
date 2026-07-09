@@ -50,6 +50,6 @@ content hash, so the review trail is bound to the immutable chain.
 
 ## Related
 
-- [Skills](./skills.md)
-- [Automations](./automations.md)
-- [Audit and compliance](./audit-and-compliance.md)
+- [Skills](/mothy-docs/skills/)
+- [Automations](/mothy-docs/automations/)
+- [Audit and compliance](/mothy-docs/audit-and-compliance/)

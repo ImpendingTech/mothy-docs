@@ -5,7 +5,7 @@ description: "Prerequisites, install, configuration, database setup, ingesting y
 
 This page gets a Mothy development box running and answers your first question.
 For the pinned appliance build and hosted deployment, see
-[Deployment](./deployment.md).
+[Deployment](/mothy-docs/deployment/).
 
 ## Prerequisites
 
@@ -30,12 +30,12 @@ install live and unpinned and are for development, not the appliance. On macOS,
 Configuration comes only from the environment, validated in one place, and
 invalid config fails fast. At minimum set the database URL, the Ollama URL and
 models, and authentication. See the full list in
-[Configuration](./configuration.md).
+[Configuration](/mothy-docs/configuration/).
 
 Authentication is required before Mothy will bind to anything other than
 loopback. For a single trust domain set `AUTH_PASSWORD` and `AUTH_SECRET`. For
 separate accounts set `MULTI_USER` and add users with `npm run user:add` (see
-[Users and isolation](./users-and-isolation.md)).
+[Users and isolation](/mothy-docs/users-and-isolation/)).
 
 ## Set up the database
 
@@ -51,7 +51,7 @@ Bring up Postgres with the shipped `docker-compose.yml`, then:
 Put files (PDF, Word, `.txt`, `.md`) in `./data` and run `npm run ingest`. State
 ownership explicitly: `npm run ingest -- --owner <user>` for a private corpus, or
 `npm run ingest -- --shared` for the common corpus everyone can read. See
-[Documents and answers](./documents-and-answers.md).
+[Documents and answers](/mothy-docs/documents-and-answers/).
 
 ## Ask your first question
 
@@ -63,7 +63,7 @@ You can also ask from the command line: `npm run agent -- "your question"`.
 
 ## Next steps
 
-- Learn the ideas the rest of the docs build on in [Core concepts](./concepts.md).
-- Give Mothy reusable procedures with [Skills](./skills.md).
-- Schedule recurring work with [Automations](./automations.md).
-- Understand the trail everything leaves in [Audit and compliance](./audit-and-compliance.md).
+- Learn the ideas the rest of the docs build on in [Core concepts](/mothy-docs/concepts/).
+- Give Mothy reusable procedures with [Skills](/mothy-docs/skills/).
+- Schedule recurring work with [Automations](/mothy-docs/automations/).
+- Understand the trail everything leaves in [Audit and compliance](/mothy-docs/audit-and-compliance/).

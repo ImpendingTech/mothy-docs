@@ -20,7 +20,7 @@ inference.
 There are two paths, and both end in a versioned, audited definition:
 
 - Mothy can draft an automation with `automation_propose`. Like a skill draft, it
-  enters the [proposals queue](./proposals-and-approvals.md)
+  enters the [proposals queue](/mothy-docs/proposals-and-approvals/)
   and only becomes runnable when a person approves it at `/proposals`.
 - An operator can create or edit an automation directly at `/automations`. A human
   act needs no queue, but it is still validated, versioned, and audited.
@@ -73,6 +73,6 @@ panel and press Run now.
 
 ## Related
 
-- [Proposals and approvals](./proposals-and-approvals.md)
-- [Skills](./skills.md)
-- [Configuration](./configuration.md)
+- [Proposals and approvals](/mothy-docs/proposals-and-approvals/)
+- [Skills](/mothy-docs/skills/)
+- [Configuration](/mothy-docs/configuration/)

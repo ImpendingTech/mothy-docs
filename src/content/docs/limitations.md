@@ -22,4 +22,4 @@ Stated plainly, so nobody is surprised.
 ## Related
 
 - [Feature Inventory](https://github.com/ImpendingTech/mothy)
-- [Documentation home](./index.md)
+- [Documentation home](/mothy-docs/)

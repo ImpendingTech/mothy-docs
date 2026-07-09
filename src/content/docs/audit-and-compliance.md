@@ -63,6 +63,6 @@ review.
 
 ## Related
 
-- [Security and hardening](./security-and-hardening.md)
-- [Users and isolation](./users-and-isolation.md)
-- [Commands](./commands.md)
+- [Security and hardening](/mothy-docs/security-and-hardening/)
+- [Users and isolation](/mothy-docs/users-and-isolation/)
+- [Commands](/mothy-docs/commands/)

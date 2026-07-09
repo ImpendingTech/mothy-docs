@@ -10,11 +10,11 @@ works. Facts are embedded and recalled by relevance across sessions.
 Memory is owner-scoped like every other data type: a memory belongs to the user
 who created it, or is shared when it has no owner, and Row-Level Security keeps
 one user's memories out of another user's recall. See
-[Users and isolation](./users-and-isolation.md).
+[Users and isolation](/mothy-docs/users-and-isolation/).
 
 Memory writes are ordinary, visible tool calls inside a turn, and they are
 audited. Memory is not a background profiler: Mothy does not build conclusions
 about a user on a cadence in the background. If you want a reusable procedure
-rather than a fact, use a [skill](./skills.md);
+rather than a fact, use a [skill](/mothy-docs/skills/);
 if you want Mothy to answer from source material, ingest it as a
-[document](./documents-and-answers.md).
+[document](/mothy-docs/documents-and-answers/).

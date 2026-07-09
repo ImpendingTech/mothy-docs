@@ -48,6 +48,6 @@ automation run unless `DELEGATION_IN_AUTOMATIONS` is set.
 
 ## Related
 
-- [Core concepts](./concepts.md)
-- [Automations](./automations.md)
-- [Audit and compliance](./audit-and-compliance.md)
+- [Core concepts](/mothy-docs/concepts/)
+- [Automations](/mothy-docs/automations/)
+- [Audit and compliance](/mothy-docs/audit-and-compliance/)

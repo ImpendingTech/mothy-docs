@@ -53,5 +53,5 @@ documents do not contain (`npm run eval:fostering`).
 
 ## Related
 
-- [Core concepts](./concepts.md)
-- [Commands](./commands.md)
+- [Core concepts](/mothy-docs/concepts/)
+- [Commands](/mothy-docs/commands/)

@@ -63,6 +63,6 @@ grouped by area, with defaults where they apply.
 
 ## Related
 
-- [Commands](./commands.md)
-- [Getting started](./getting-started.md)
-- [Data model](./data-model.md)
+- [Commands](/mothy-docs/commands/)
+- [Getting started](/mothy-docs/getting-started/)
+- [Data model](/mothy-docs/data-model/)

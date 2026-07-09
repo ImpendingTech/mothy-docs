@@ -37,6 +37,6 @@ and proposals.
 
 ## Related
 
-- [Core concepts](./concepts.md)
-- [Audit and compliance](./audit-and-compliance.md)
-- [Commands](./commands.md)
+- [Core concepts](/mothy-docs/concepts/)
+- [Audit and compliance](/mothy-docs/audit-and-compliance/)
+- [Commands](/mothy-docs/commands/)

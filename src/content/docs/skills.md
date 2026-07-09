@@ -32,7 +32,7 @@ library grows:
 Mothy can propose a create, update, or archive with `skill_propose`. This never
 writes to the skills store. It stages a proposal that a person reviews and
 approves. The full review flow, the content scan, and the approval guarantees are
-in [Proposals and approvals](./proposals-and-approvals.md).
+in [Proposals and approvals](/mothy-docs/proposals-and-approvals/).
 Every applied change writes an immutable revision whose sha256 is recorded on the
 audit chain, so a later edit of a revision row is detectable against the chain.
 
@@ -63,6 +63,6 @@ review flow. All are hash-chained and carry the relevant content hash.
 
 ## Related
 
-- [Proposals and approvals](./proposals-and-approvals.md)
-- [Automations](./automations.md)
-- [Configuration](./configuration.md)
+- [Proposals and approvals](/mothy-docs/proposals-and-approvals/)
+- [Automations](/mothy-docs/automations/)
+- [Configuration](/mothy-docs/configuration/)
