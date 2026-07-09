@@ -9,8 +9,8 @@ hero:
       link: /mothy-docs/getting-started/
       icon: right-arrow
       variant: primary
-    - text: About Chrysalis and Mothy
-      link: https://impendingtech.sharepoint.com/sites/chrysalis-kb
+    - text: About Mothy
+      link: https://getmothy.ai
       icon: external
       variant: minimal
 ---

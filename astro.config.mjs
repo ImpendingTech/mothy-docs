@@ -21,8 +21,8 @@ export default defineConfig({
         },
       ],
       logo: {
-        light: "./src/assets/mothy-wordmark.svg",
-        dark: "./src/assets/mothy-wordmark-reversed.svg",
+        light: "./src/assets/mothy-lockup.svg",
+        dark: "./src/assets/mothy-lockup-reversed.svg",
         replacesTitle: true,
       },
       favicon: "/favicon.svg",
